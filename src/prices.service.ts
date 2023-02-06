@@ -11,7 +11,7 @@ export class PricesService {
       {
         asset: 'Ethereum',
         price: '6501.07',
-      }
+      },
     ];
   }
 }

@@ -35,3 +35,14 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Endpoints
+
+```bash
+# Landing page ("Hello Crypto!")
+http://localhost:3000
+
+# Get all asset prices
+http://localhost:3000/prices
+
+```
+

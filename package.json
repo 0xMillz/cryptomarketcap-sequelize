@@ -1,8 +1,8 @@
 {
-  "name": "nest-typescript-starter",
+  "name": "cryptomarketcap",
   "private": true,
-  "version": "1.0.0",
-  "description": "Nest TypeScript starter repository",
+  "version": "0.1.0",
+  "description": "A CoinMarketCap-style market data aggregator written in TypeScript",
   "license": "MIT",
   "scripts": {
     "build": "nest build",

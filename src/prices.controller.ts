@@ -7,7 +7,7 @@ export class PricesController {
   constructor(private readonly pricesService: PricesService) {}
 
   @Get()
-  getPrices(): Array<Price> {
-    return this.pricesService.getPrices();
+  async findAll(): Promise<Price[]> {
+    return this.pricesService.findAll();
   }
 }

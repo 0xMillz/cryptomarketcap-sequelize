@@ -6,15 +6,17 @@ import { PricesService } from './prices/prices.service';
 import { SequelizeModule } from '@nestjs/sequelize';
 
 @Module({
-  imports: [SequelizeModule.forRoot({
-    dialect: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    username: 'user',
-    password: 'password',
-    database: 'cryptomarketcap',
-    models: [],
-  }),],
+  imports: [
+    SequelizeModule.forRoot({
+      dialect: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: process.env.POSTGRES_USER,
+      password: process.env.POSTGRES_PASSWORD,
+      database: process.env.POSTGRES_DB,
+      models: [],
+    }),
+  ],
   controllers: [AppController, PricesController],
   providers: [AppService, PricesService],
 })

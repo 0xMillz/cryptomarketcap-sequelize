@@ -6,7 +6,7 @@ export class PricesService {
   private readonly prices: Price[] = [
     {
       asset: 'Bitcoin',
-      price: '60000.00',
+      price: '50000.00',
     },
     {
       asset: 'Ethereum',

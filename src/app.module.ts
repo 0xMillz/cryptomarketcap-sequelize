@@ -9,7 +9,7 @@ import { SequelizeModule } from "@nestjs/sequelize";
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: '.env'
+      envFilePath: `.env.${process.env.NODE_ENV}`
     }),
     SequelizeModule.forRootAsync({
       imports: [ConfigModule],

@@ -45,10 +45,10 @@ $ npm run test:cov
 
 ```bash
 # Landing page ("Hello Crypto!")
-http://localhost:3000
+http://localhost:3000/api/v1
 
-# Get all asset prices
-http://localhost:3000/prices
+# Get all asset assets
+http://localhost:3000/api/v1/assets
 
 ```
 

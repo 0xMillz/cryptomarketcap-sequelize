@@ -1,23 +1,19 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PricesController } from './prices/prices.controller';
-import { PricesService } from './prices/prices.service';
-import { SequelizeModule } from '@nestjs/sequelize';
+import { AssetsController } from './modules/assets/assets.controller';
+import { AssetsService } from './modules/assets/assets.service';
+import { ConfigModule } from '@nestjs/config';
+import { DatabaseModule } from './core/database/database.module';
+import { AssetsModule } from './modules/assets/assets.module';
 
 @Module({
   imports: [
-    SequelizeModule.forRoot({
-      dialect: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: process.env.POSTGRES_USER,
-      password: process.env.POSTGRES_PASSWORD,
-      database: process.env.POSTGRES_DB,
-      models: [],
-    }),
+    ConfigModule.forRoot({ isGlobal: true }),
+    DatabaseModule,
+    AssetsModule,
   ],
-  controllers: [AppController, PricesController],
-  providers: [AppService, PricesService],
+  controllers: [AppController, AssetsController],
+  providers: [AppService, AssetsService],
 })
 export class AppModule {}

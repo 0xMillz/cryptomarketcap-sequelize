@@ -1,6 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { AssetsService } from './assets.service';
-import { Asset } from './interfaces/asset.interface';
+import { Asset } from "./asset.model";
+
 
 @Controller('assets')
 export class AssetsController {

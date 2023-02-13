@@ -1,10 +1,10 @@
-import 'dotenv/config';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AssetsModule } from './modules/assets/assets.module';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { Asset } from "./modules/assets/asset.model";
 
 @Module({
   imports: [
@@ -22,7 +22,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
         const database = config.get('POSTGRES_NAME') ?? 'cryptomarketcap';
         const dialect = config.get('POSTGRES_DIALECT') ?? 'postgres';
 
-        console.info(`Attempting connection to ${database} db on port ${port}`);
+        console.info(`Connecting to ${database} db on port ${port}`);
 
         return {
           username,
@@ -31,6 +31,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
           host,
           port: +port,
           dialect,
+          entities: [Asset],
         };
       },
     }),

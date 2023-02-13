@@ -1,4 +1,4 @@
-import { Asset } from './asset.entity';
+import { Asset } from './asset.model';
 
 export const assetsProviders = [
   {

@@ -19,7 +19,6 @@ export class Asset extends Model<Partial<Asset>> {
   id: string;
 
   @Column({
-    unique: true,
     type: DataType.STRING,
     allowNull: false,
   })
@@ -27,7 +26,6 @@ export class Asset extends Model<Partial<Asset>> {
 
   @Column({
     type: DataType.STRING,
-    unique: true,
     allowNull: false,
   })
   price: string;

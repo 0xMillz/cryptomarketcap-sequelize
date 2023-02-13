@@ -6,11 +6,11 @@ import { InjectModel } from "@nestjs/sequelize";
 export class AssetsService {
   constructor(
     @InjectModel(Asset)
-    private readonly AssetModel: typeof Asset,
+    private readonly assetModel: typeof Asset,
   ) {}
 
   findOneById(id: string): Promise<Asset> {
-    return this.AssetModel.findOne({
+    return this.assetModel.findOne({
       where: {
         id,
       },
@@ -18,6 +18,6 @@ export class AssetsService {
   }
 
   findAll(): Promise<Asset[]> {
-    return this.AssetModel.findAll();
+    return this.assetModel.findAll();
   }
 }

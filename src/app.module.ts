@@ -32,6 +32,7 @@ import { Asset } from "./modules/assets/asset.model";
           port: +port,
           dialect,
           entities: [Asset],
+          autoLoadModels: true
         };
       },
     }),

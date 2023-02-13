@@ -5,9 +5,7 @@ import {
   DataType,
   PrimaryKey,
   IsUUID,
-  Default,
-  CreatedAt,
-  UpdatedAt
+  Default
 } from "sequelize-typescript";
 
 @Table({
@@ -33,12 +31,4 @@ export class Asset extends Model<Partial<Asset>> {
     allowNull: false,
   })
   price: string;
-
-  @CreatedAt
-  @Column
-  createdAt!: Date;
-
-  @UpdatedAt
-  @Column
-  updatedAt!: Date;
 }

@@ -9,7 +9,7 @@ export class AssetsService {
     private readonly AssetModel: typeof Asset,
   ) {}
 
-  findOne(id: string): Promise<Asset> {
+  findOneById(id: string): Promise<Asset> {
     return this.AssetModel.findOne({
       where: {
         id,

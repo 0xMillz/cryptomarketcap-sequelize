@@ -12,5 +12,6 @@ import { assetsProviders } from "./assets.providers";
     AssetsService,
     ...assetsProviders
   ],
+  exports: [AssetsService]
 })
 export class AssetsModule {}

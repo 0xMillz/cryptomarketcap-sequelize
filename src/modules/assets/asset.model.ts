@@ -5,11 +5,11 @@ import {
   DataType,
   PrimaryKey,
   IsUUID,
-  Default
-} from "sequelize-typescript";
+  Default,
+} from 'sequelize-typescript';
 
 @Table({
-  timestamps: true
+  timestamps: true,
 })
 export class Asset extends Model<Partial<Asset>> {
   @IsUUID(4)

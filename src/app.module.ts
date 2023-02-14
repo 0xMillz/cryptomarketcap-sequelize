@@ -9,8 +9,7 @@ import { Asset } from "./modules/assets/asset.model";
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true,
-      envFilePath: `.env.${process.env.NODE_ENV}`,
+      isGlobal: true
     }),
     SequelizeModule.forRootAsync({
       inject: [ConfigService],
@@ -19,7 +18,7 @@ import { Asset } from "./modules/assets/asset.model";
         const password = config.get('POSTGRES_PASSWORD') ?? 'password';
         const host = config.get('POSTGRES_HOST') ?? 'localhost';
         const port = config.get('POSTGRES_PORT') ?? 5432;
-        const database = config.get('POSTGRES_NAME') ?? 'cryptomarketcap';
+        const database = config.get('POSTGRES_DB') ?? 'cryptomarketcap';
         const dialect = config.get('POSTGRES_DIALECT') ?? 'postgres';
 
         console.info(`Connecting to ${database} db on port ${port}`);
